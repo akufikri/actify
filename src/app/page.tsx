@@ -18,7 +18,7 @@ export default function Home() {
           /> */}
           </div>
           <h1 className="text-4xl font-medium mt-4">
-            Let's make every moment count with <span className="text-primary font-extrabold">A</span>ctify!
+            Let`s make every moment count with <span className="text-primary font-extrabold">A</span>ctify!
           </h1>
           <div className='sm:flex flex-wrap mt-12 justify-center gap-8'>
             <button className='btn border-2 border-white'>
