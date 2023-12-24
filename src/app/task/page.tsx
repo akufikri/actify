@@ -6,9 +6,11 @@ const Task = () => {
       const [showModal, setShowModal] = useState(false);
       const [selectedTask, setSelectedTask] = useState('');
 
-      const openModal = (task) => {
+      const openModal = (task: string) => {
+            setSelectedTask(task);
             setShowModal(true);
       };
+
 
       const closeModal = () => {
             setShowModal(false);
@@ -47,7 +49,7 @@ const Task = () => {
                                     </form>
                                     <h3 className="font-bold text-lg">Create Activify</h3>
                                     <div className="py-4">
-                                          <textarea className="textarea textarea-secondary w-full" placeholder="WFH.."></textarea>
+                                          <textarea className="textarea textarea-secondary w-full" placeholder="[🍎]Fixing bug and errors...."></textarea>
                                     </div>
                                     <div className="flex gap-3">
                                           <button className='btn btn-primary'>create</button>
