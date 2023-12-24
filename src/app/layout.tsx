@@ -1,8 +1,12 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
+import Navbar from '@/components/Navbar'
+import Drawer from '@/components/Drawer'
+import { ClerkProvider } from '@clerk/nextjs'
 
 const inter = Inter({ subsets: ['latin'] })
+const jetBrains_Mono = JetBrains_Mono({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,8 +19,21 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" data-theme="synthwave">
+        <body className={jetBrains_Mono.className}>
+          <Navbar />
+          <Drawer />
+          <div className="drawer-content">
+            <div className="flex justify-center">
+              <div className="max-w-5xl w-full">
+                {children}
+              </div>
+            </div>
+          </div>
+        </body>
+      </html>
+    </ClerkProvider>
+
   )
 }
